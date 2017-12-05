@@ -1,0 +1,9 @@
+{
+  "name": "react-redux-in-es6",
+  "version": "0.0.0",
+  "description": "React-Redux-in-ES6",
+  "main": "app.js",
+  "author": {
+    "name": "Arkadiy_Shuvaev"
+  }
+}
