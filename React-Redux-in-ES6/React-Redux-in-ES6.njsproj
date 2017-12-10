@@ -11,7 +11,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>73cae446-c700-4dd3-8be2-5d6b0a5c3783</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -28,9 +29,37 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app.js" />
+    <Compile Include="src\components\about\AboutPage.js" />
+    <Compile Include="src\components\App.js" />
+    <Compile Include="src\components\common\Header.js" />
+    <Compile Include="src\components\home\HomePage.js" />
+    <Compile Include="src\index.js" />
+    <Compile Include="src\index.test.js" />
+    <Compile Include="src\routes.js" />
+    <Compile Include="tools\srcServer.js" />
+    <Compile Include="tools\startMessage.js" />
+    <Compile Include="tools\testSetup.js" />
+    <Compile Include="webpack.config.dev.js" />
+    <Content Include=".babelrc" />
+    <Content Include=".editorconfig" />
+    <Content Include=".eslintrc" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="src\components\course\CoursesPage.js" />
+    <Content Include="src\index.html" />
+    <Content Include="src\styles\styles.css">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\components\" />
+    <Folder Include="src\components\home\" />
+    <Folder Include="src\components\about\" />
+    <Folder Include="src\components\common\" />
+    <Folder Include="src\components\course\" />
+    <Folder Include="src\styles\" />
+    <Folder Include="tools\" />
+    <Folder Include="src\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
