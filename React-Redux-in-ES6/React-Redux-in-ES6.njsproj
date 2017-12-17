@@ -29,13 +29,17 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="src\actions\courseActions.js" />
     <Compile Include="src\components\about\AboutPage.js" />
     <Compile Include="src\components\App.js" />
     <Compile Include="src\components\common\Header.js" />
     <Compile Include="src\components\home\HomePage.js" />
     <Compile Include="src\index.js" />
     <Compile Include="src\index.test.js" />
+    <Compile Include="src\reducers\courseReducer.js" />
+    <Compile Include="src\reducers\index.js" />
     <Compile Include="src\routes.js" />
+    <Compile Include="src\store\configureStore.js" />
     <Compile Include="tools\srcServer.js" />
     <Compile Include="tools\startMessage.js" />
     <Compile Include="tools\testSetup.js" />
@@ -57,6 +61,9 @@
     <Folder Include="src\components\about\" />
     <Folder Include="src\components\common\" />
     <Folder Include="src\components\course\" />
+    <Folder Include="src\actions\" />
+    <Folder Include="src\store\" />
+    <Folder Include="src\reducers\" />
     <Folder Include="src\styles\" />
     <Folder Include="tools\" />
     <Folder Include="src\" />
