@@ -74,17 +74,20 @@ class CoursesPage extends React.Component {
 }
 
 CoursesPage.propTypes = {
-    courses: PropTypes.array.isRequired
+    courses: PropTypes.array.isRequired,
+    createCourse: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
     return { courses: state.courses };
-};
+}
+
 function mapDispatchToProps(dispatch) {
     return {
         createCourse: course => {
             dispatch(CourseActions.createCourse(course));
         }
-    }
-};
+    };
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
