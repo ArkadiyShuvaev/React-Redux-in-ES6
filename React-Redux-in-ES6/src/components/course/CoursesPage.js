@@ -4,18 +4,19 @@ import * as CourseActions from "../../actions/courseActions";
 
 class CoursesPage extends React.Component {
 
-    getDefaultState() {
-        return {
-            course: { title: "" }
-        };
-    }
-
-    constructor(props, context) {
+    constructor
+    (props, context) {
         super(props, context);
 
         this.state = this.getDefaultState();
         this.onTitleChange = this.onTitleChange.bind(this);
         this.onChange = this.onChange.bind(this);
+    }
+
+    getDefaultState() {
+        return {
+            course: { title: "" }
+        };
     }
 
     onTitleChange(event) {
@@ -25,13 +26,36 @@ class CoursesPage extends React.Component {
     }
 
     onChange() {
-        this.props.dispatch(CourseActions.createCourse(this.state.course));
+        this.props.createCourse(this.state.course);
     }
 
+    getCourse(c, index) {
+        return (<div key={index}>{c.title}</div>);
+    }
+
+    createCourseRows(courses) {
+        const result = [];
+        for (let i = 0; i < courses.length; i++) {
+            result.push(this.getCourse(courses[i], i));
+        }
+
+        return result;
+
+        //return courses.map((c, index) => {
+        //    return <div key={index}>{c.course.title}</div>;
+        //});
+    }
+
+
     render() {
+        
         return (
             <div>
                 <h1>Courses</h1>
+                <div>
+                    {this.createCourseRows(this.props.courses)}
+                </div>
+
                 <h2>Add Course</h2>
 
                 <input
@@ -49,12 +73,18 @@ class CoursesPage extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => { return { courses: state.courses } };
-//const mapStateToProps = (dispatch) => {
-//    return {
-//        loadCourses: () => {
-//            dispatch(loadCourses());
-//        }
-//    }
-//};
-export default connect(mapStateToProps)(CoursesPage);
+CoursesPage.propTypes = {
+    courses: PropTypes.array.isRequired
+};
+
+function mapStateToProps(state, ownProps) {
+    return { courses: state.courses };
+};
+function mapDispatchToProps(dispatch) {
+    return {
+        createCourse: course => {
+            dispatch(CourseActions.createCourse(course));
+        }
+    }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
