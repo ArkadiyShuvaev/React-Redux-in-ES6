@@ -29,6 +29,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="src\actions\actionTypes.js" />
     <Compile Include="src\actions\courseActions.js" />
     <Compile Include="src\components\about\AboutPage.js" />
     <Compile Include="src\components\App.js" />
