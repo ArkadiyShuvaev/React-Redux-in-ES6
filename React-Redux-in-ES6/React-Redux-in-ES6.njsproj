@@ -31,6 +31,9 @@
   <ItemGroup>
     <Compile Include="src\actions\actionTypes.js" />
     <Compile Include="src\actions\courseActions.js" />
+    <Compile Include="src\api\delay.js" />
+    <Compile Include="src\api\mockAuthorApi.js" />
+    <Compile Include="src\api\mockCourseApi.js" />
     <Compile Include="src\components\about\AboutPage.js" />
     <Compile Include="src\components\App.js" />
     <Compile Include="src\components\common\Header.js" />
@@ -63,6 +66,7 @@
     <Folder Include="src\components\common\" />
     <Folder Include="src\components\course\" />
     <Folder Include="src\actions\" />
+    <Folder Include="src\api\" />
     <Folder Include="src\store\" />
     <Folder Include="src\reducers\" />
     <Folder Include="src\styles\" />
