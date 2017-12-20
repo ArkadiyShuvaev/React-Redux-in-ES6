@@ -1,6 +1,7 @@
 import React, { PropTypes } from "react";
 import { connect } from "react-redux";
 import * as CourseActions from "../../actions/courseActions";
+import CourseList from "./CourseList.jsx";
 
 class CoursesPage extends React.Component {
 
@@ -8,26 +9,12 @@ class CoursesPage extends React.Component {
         super(props, context);
     }
 
-    getCourse(c, index) {
-        return (<div key={index}>{c.title}</div>);
-    }
-
-    createCourseRows(courses) {
-        const result = [];
-        for (let i = 0; i < courses.length; i++) {
-            result.push(this.getCourse(courses[i], i));
-        }
-
-        return result;
-    }
-
-
     render() {
-        
+        const { courses } = this.props;
         return (
             <div>
                 <h1>Courses</h1>
-                {this.createCourseRows(this.props.courses)}
+                <CourseList courses={courses} />
             </div>
         );
     }

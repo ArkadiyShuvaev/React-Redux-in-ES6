@@ -1,4 +1,4 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -53,7 +53,9 @@
     <Content Include=".eslintrc" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="src\components\course\CourseListRow.jsx" />
     <Content Include="src\components\course\CoursesPage.js" />
+    <Content Include="src\components\course\CourseList.jsx" />
     <Content Include="src\index.html" />
     <Content Include="src\styles\styles.css">
       <SubType>Code</SubType>
