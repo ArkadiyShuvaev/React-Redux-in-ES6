@@ -1,1 +1,1 @@
-export default delay = 0;
+export default delay = 1000;

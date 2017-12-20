@@ -1,4 +1,4 @@
-import Delay from './delay';
+import Delay from "./delay";
 
 // This file mocks a web API by working with the hard-coded data below.
 // It uses setTimeout to simulate the delay of an AJAX call.
