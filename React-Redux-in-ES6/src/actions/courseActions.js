@@ -7,7 +7,7 @@ export function createCourse(course) {
 
 function loadCoursesSuccess(courses) {
     return { type: CreateActions.LOAD_COURSES_SUCCESS, courses };
-};
+}
 
 export function loadCourses() {
     

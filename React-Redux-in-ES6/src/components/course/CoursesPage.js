@@ -4,29 +4,8 @@ import * as CourseActions from "../../actions/courseActions";
 
 class CoursesPage extends React.Component {
 
-    constructor
-    (props, context) {
+    constructor(props, context) {
         super(props, context);
-
-        this.state = this.getDefaultState();
-        this.onTitleChange = this.onTitleChange.bind(this);
-        this.onChange = this.onChange.bind(this);
-    }
-
-    getDefaultState() {
-        return {
-            course: { title: "" }
-        };
-    }
-
-    onTitleChange(event) {
-        const course = this.state.course;
-        course.title = event.target.value;
-        this.setState({ course: course });
-    }
-
-    onChange() {
-        this.props.createCourse(this.state.course);
     }
 
     getCourse(c, index) {
@@ -40,10 +19,6 @@ class CoursesPage extends React.Component {
         }
 
         return result;
-
-        //return courses.map((c, index) => {
-        //    return <div key={index}>{c.course.title}</div>;
-        //});
     }
 
 
@@ -52,22 +27,7 @@ class CoursesPage extends React.Component {
         return (
             <div>
                 <h1>Courses</h1>
-                <div>
-                    {this.createCourseRows(this.props.courses)}
-                </div>
-
-                <h2>Add Course</h2>
-
-                <input
-                    type="text"
-                    onChange={this.onTitleChange}
-                    value={this.state.course.title} />
-
-                <input
-                    type="submit"
-                    onClick={this.onChange}
-                    value="Save" />
-
+                {this.createCourseRows(this.props.courses)}
             </div>
         );
     }
