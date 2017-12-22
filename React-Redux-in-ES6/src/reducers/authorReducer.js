@@ -1,9 +1,9 @@
 import * as ActionTypes from "../actions/actionTypes";
 import InitialState from "./initialState";
 
-export function authorReducer(previousState = InitialState.authors, action) {
+export default function authorReducer(previousState = InitialState.authors, action) {
     switch (action.type) {
-        case ActionTypes.LOAD_COURSES_SUCCESS:
+        case ActionTypes.LOAD_AUTHORS_SUCCESS:
             return action.authors;
         
         default:
