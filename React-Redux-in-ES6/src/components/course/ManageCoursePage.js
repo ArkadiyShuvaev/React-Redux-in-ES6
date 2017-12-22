@@ -1,8 +1,8 @@
 import React, { PropTypes } from "react";
 import { connect } from "react-redux";
 import * as CourseActions from "../../actions/courseActions";
+import * as AuthorActions from "../../actions/authorActions";
 import CourseForm from "./CourseForm.jsx";
-import * as CourseList from "./CourseList.jsx";
 
 
 class ManageCoursePage extends React.Component {
@@ -39,8 +39,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        createCourse: course => {
-            dispatch(CourseActions.createCourse(course));
+        getAuthors: () => {
+            dispatch(AuthorActions.getAuthors());
         }
     };
 }
