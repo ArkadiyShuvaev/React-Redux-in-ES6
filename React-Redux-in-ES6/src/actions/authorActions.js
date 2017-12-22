@@ -1,11 +1,11 @@
-import * as AuthorApi from "../api/mockAuthorApi";
+import AuthorApi from "../api/mockAuthorApi";
 import * as CreateActions from "./actionTypes";
 
 const getAuthorsSuccess = (authors) => {
     return { type: CreateActions.LOAD_AUTHORS_SUCCESS, authors: authors };
 };
 
-export function getAuthors() {
+export function loadAuthors() {
     return dispatch => {
         return AuthorApi.getAllAuthors()
             .then(authors => {

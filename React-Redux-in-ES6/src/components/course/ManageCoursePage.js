@@ -39,8 +39,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        getAuthors: () => {
-            dispatch(AuthorActions.getAuthors());
+        loadAuthors: () => {
+            dispatch(AuthorActions.loadAuthors());
         }
     };
 }
