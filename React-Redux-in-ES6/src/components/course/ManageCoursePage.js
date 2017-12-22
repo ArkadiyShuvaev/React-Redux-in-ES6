@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react";
 import { connect } from "react-redux";
 import * as CourseActions from "../../actions/courseActions";
-import * as AuthorActions from "../../actions/authorActions";
+//import * as AuthorActions from "../../actions/authorActions";
 import CourseForm from "./CourseForm.jsx";
 
 
@@ -14,6 +14,7 @@ class ManageCoursePage extends React.Component {
             errors: {}
         };
         this.updateCourseState = this.updateCourseState.bind(this);
+        this.saveCourse = this.saveCourse.bind(this);
     }
 
     updateCourseState(event) {
@@ -23,6 +24,9 @@ class ManageCoursePage extends React.Component {
         this.setState({ course: course });
     }
 
+    saveCourse() {
+        this.props.saveCourse(this.state.course);
+    }
 
     render() {
         return (
@@ -31,6 +35,7 @@ class ManageCoursePage extends React.Component {
                 errors={this.state.errors}
                 allAuthors={this.props.authors}
                 onChange={this.updateCourseState}
+                onSave={this.saveCourse}
             />
         );
     }
@@ -54,8 +59,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        loadAuthors: () => {
-            dispatch(AuthorActions.loadAuthors());
+        saveCourse: (course) => {
+            dispatch(CourseActions.saveCourse(course));
         }
     };
 }
