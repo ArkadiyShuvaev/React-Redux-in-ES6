@@ -24,7 +24,8 @@ class ManageCoursePage extends React.Component {
         this.setState({ course: course });
     }
 
-    saveCourse() {
+    saveCourse(event) {
+        event.preventDefault();
         this.props.saveCourse(this.state.course);
     }
 
@@ -67,7 +68,8 @@ function mapDispatchToProps(dispatch) {
 
 ManageCoursePage.propTypes = {
     course: PropTypes.object.isRequired,
-    authors: PropTypes.array.isRequired
+    authors: PropTypes.array.isRequired,
+    saveCourse: PropTypes.func.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ManageCoursePage);
