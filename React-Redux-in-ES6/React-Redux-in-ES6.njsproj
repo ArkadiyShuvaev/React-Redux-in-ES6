@@ -38,6 +38,7 @@
     <Compile Include="src\components\about\AboutPage.js" />
     <Compile Include="src\components\App.js" />
     <Compile Include="src\components\common\Header.jsx" />
+    <Compile Include="src\components\common\LoadingDots.js" />
     <Compile Include="src\components\common\SelectInput.jsx" />
     <Compile Include="src\components\common\TextInput.jsx" />
     <Compile Include="src\components\course\ManageCoursePage.js" />
