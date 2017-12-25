@@ -17,6 +17,17 @@ class ManageCoursePage extends React.Component {
         this.saveCourse = this.saveCourse.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        /* React may call this method even if the props have not changed,
+            so make sure to compare the current and next values if you only
+            want to handle changes. This may occur when the parent component
+            causes your component to re-render.
+        */
+        if (this.props.course.id !== nextProps.course.id) {
+            this.setState({course: Object.assign({}, nextProps.course)});
+        }
+    }
+
     updateCourseState(event) {
         const field = event.target.name;
         const course = Object.assign({}, this.state.course); // avoid mutating state
