@@ -43,8 +43,24 @@ class ManageCoursePage extends React.Component {
     }
 }
 
+function getCourseById(courses, courseId) {
+    const result = courses.filter(c => c.id === courseId);
+    if (result.length >= 1) {
+        return result[0];
+    }
+    return null;
+}
+
 function mapStateToProps(state, ownProps) {
-    let course = { id: "", watchHref: "", title: "", authorId: "", length: "", category: "" };
+    const courseId = ownProps.params.id; // from the path `/course/:id`
+
+    let course;
+    if (courseId && state.courses.length > 0) {
+        course = getCourseById(state.courses, courseId);
+    } else {
+        course = { id: "", watchHref: "", title: "", authorId: "", length: "", category: "" };
+    }
+    
 
     const authorsFormattedForDropdown = state.authors.map(author => {
         return {
