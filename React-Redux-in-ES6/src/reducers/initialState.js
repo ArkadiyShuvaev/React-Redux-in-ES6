@@ -1,5 +1,5 @@
-export default {
-    authors: [],
+export default { 
+    authors: [], 
     courses: [],
     ajaxCallsInProgressCount: 0
 }

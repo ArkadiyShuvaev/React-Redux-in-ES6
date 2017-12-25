@@ -46,6 +46,7 @@
     <Compile Include="src\components\home\HomePage.js" />
     <Compile Include="src\index.js" />
     <Compile Include="src\index.test.js" />
+    <Compile Include="src\reducers\ajaxStatusReducer.js" />
     <Compile Include="src\reducers\authorReducer.js" />
     <Compile Include="src\reducers\courseReducer.js" />
     <Compile Include="src\reducers\index.js" />
