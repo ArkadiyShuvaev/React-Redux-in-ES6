@@ -1,5 +1,6 @@
 import * as CreateActions from "./actionTypes";
 import CourseApi from "../api/mockCourseApi";
+import * as AjaxStatusActions from "./ajaxStatusActions";
 
 export function createCourse(course) {
     return { type: CreateActions.CREATE_COURSE, course }; // course: course
@@ -20,6 +21,8 @@ function updateCourseSuccess(course) {
 export function loadCourses() {
     
     return (dispatch) => {
+        dispatch(AjaxStatusActions.beginAsynCall());
+
         CourseApi.getAllCourses().then(courses => {
             dispatch(loadCoursesSuccess(courses));
         }).catch(error => {
@@ -32,7 +35,10 @@ export function saveCourse(course) {
     // getState is for the cases where you are wanting to access
     // Redux store and get particular pieces of state w/o having
     // to pass it in as a parameter
+    
     return (dispatch, getstate) => {
+        dispatch(AjaxStatusActions.beginAsynCall());
+
         CourseApi.saveCourse(course).then(savedCourse => {
             if (course.id) {
                 dispatch(updateCourseSuccess(savedCourse));   
