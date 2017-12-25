@@ -30,6 +30,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="src\actions\actionTypes.js" />
+    <Compile Include="src\actions\ajaxStatusActions.js" />
     <Compile Include="src\actions\authorActions.js" />
     <Compile Include="src\actions\courseActions.js" />
     <Compile Include="src\api\delay.js" />
