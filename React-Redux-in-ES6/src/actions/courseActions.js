@@ -10,8 +10,8 @@ function loadCoursesSuccess(courses) {
     return { type: CreateActions.LOAD_COURSES_SUCCESS, courses };
 }
 
-function saveCourseSuccess(course) {
-    return { type: CreateActions.SAVE_COURSE_SUCCESS, course };
+function createCourseSuccess(course) {
+    return { type: CreateActions.CREATE_COURSE_SUCCESS, course };
 }
 
 function updateCourseSuccess(course) {
@@ -23,7 +23,7 @@ export function loadCourses() {
     return (dispatch) => {
         dispatch(AjaxStatusActions.beginAsynCall());
 
-        CourseApi.getAllCourses().then(courses => {
+        return CourseApi.getAllCourses().then(courses => {
             dispatch(loadCoursesSuccess(courses));
         }).catch(error => {
             throw(error);
@@ -39,11 +39,11 @@ export function saveCourse(course) {
     return (dispatch, getstate) => {
         dispatch(AjaxStatusActions.beginAsynCall());
 
-        CourseApi.saveCourse(course).then(savedCourse => {
+        return CourseApi.saveCourse(course).then(savedCourse => {
             if (course.id) {
-                dispatch(updateCourseSuccess(savedCourse));   
+                dispatch(updateCourseSuccess(savedCourse));
             } else {
-                dispatch(saveCourseSuccess(savedCourse));
+                dispatch(createCourseSuccess(savedCourse));
             }
         }).catch(error => {
             throw(error);

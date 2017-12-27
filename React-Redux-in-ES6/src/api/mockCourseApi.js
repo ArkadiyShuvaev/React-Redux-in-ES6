@@ -5,6 +5,14 @@ import Delay from "./delay";
 // All calls return promises.
 const courses = [
     {
+        id: "react-creating-reusable-components",
+        title: "Creating Reusable React Components",
+        watchHref: "http://pluralsight.com/courses/react-creating-reusable-components",
+        authorId: "cory-house",
+        length: "6:20",
+        category: "JavaScript"
+    },
+    {
         id: "react-flux-building-applications",
         title: "Building Applications in React and Flux",
         watchHref: "http://www.pluralsight.com/courses/react-flux-building-applications",
@@ -47,12 +55,12 @@ const courses = [
 ];
 
 function replaceAll(str, find, replace) {
-    return str.replace(new RegExp(find, 'g'), replace);
+    return str.replace(new RegExp(find, "g"), replace);
 }
 
 //This would be performed on the server in a real app. Just stubbing in.
 const generateId = (course) => {
-    return replaceAll(course.title, ' ', '-');
+    return replaceAll(course.title, " ", "-");
 };
 
 class CourseApi {
@@ -95,7 +103,7 @@ class CourseApi {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 const indexOfCourseToDelete = courses.findIndex(course => {
-                    course.id == courseId;
+                    return course.courseId == courseId;
                 });
                 courses.splice(indexOfCourseToDelete, 1);
                 resolve();

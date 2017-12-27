@@ -6,7 +6,7 @@ export default function(state = InitialState.courses, action) {
         case CreateActions.LOAD_COURSES_SUCCESS:
             return action.courses;
 
-        case CreateActions.SAVE_COURSE_SUCCESS:
+        case CreateActions.CREATE_COURSE_SUCCESS:
             return [...state, Object.assign({}, action.course)];
 
         case CreateActions.UPDATE_COURSE_SUCCESS:
