@@ -46,7 +46,8 @@ export function saveCourse(course) {
                 dispatch(createCourseSuccess(savedCourse));
             }
         }).catch(error => {
-            throw(error);
+            dispatch(AjaxStatusActions.ajaxCallError(error));
+            throw (error);
         });
     };
 }

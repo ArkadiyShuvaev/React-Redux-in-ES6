@@ -9,9 +9,11 @@ export default function (state = InitialState.ajaxCallsInProgressCount, action) 
     
     if (action.type === ActionTypes.BEGIN_ASYNC_CALL) {
         return state + 1;
-    } else if (actionTypeEndInSuccess(action.type)) {
+    } else if (action.type === ActionTypes.AJAX_CALL_ERROR ||
+                            actionTypeEndInSuccess(action.type)) {
         return state - 1;
     }
 
     return state;
 }
+
