@@ -42,6 +42,7 @@
     <Compile Include="src\components\common\LoadingDots.js" />
     <Compile Include="src\components\common\SelectInput.jsx" />
     <Compile Include="src\components\common\TextInput.jsx" />
+    <Compile Include="src\components\course\CourseForm.test.js" />
     <Compile Include="src\components\course\ManageCoursePage.js" />
     <Compile Include="src\components\home\HomePage.js" />
     <Compile Include="src\index.js" />
