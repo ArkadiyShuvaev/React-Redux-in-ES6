@@ -6,7 +6,7 @@ import CourseForm from "./CourseForm.jsx";
 import Toastr from "toastr";
 
 
-class ManageCoursePage extends React.Component {
+export class ManageCoursePage extends React.Component {
 
     constructor(props, context) {
         super(props, context);
@@ -45,6 +45,15 @@ class ManageCoursePage extends React.Component {
 
     saveCourse(event) {
         event.preventDefault();
+        if (!this.state.course.title || this.state.course.title.length < 5) {
+            this.setState({
+                errors: Object.assign({},
+                    this.state.errors, { title: "Title must be at least 5 characters." })
+            });
+
+            return;
+        }
+
         this.setState({ isSaving: true });
 
         this.props.saveCourse(this.state.course)
