@@ -61,9 +61,11 @@
     <Compile Include="src\store\configureStore.prod.js" />
     <Compile Include="src\store\configureStore.dev.js" />
     <Compile Include="src\store\store.test.js" />
+    <Compile Include="tools\build.js" />
     <Compile Include="tools\srcServer.js" />
     <Compile Include="tools\startMessage.js" />
     <Compile Include="tools\testSetup.js" />
+    <Compile Include="webpack.config.prod.js" />
     <Compile Include="webpack.config.dev.js" />
     <Content Include=".babelrc" />
     <Content Include=".editorconfig" />
