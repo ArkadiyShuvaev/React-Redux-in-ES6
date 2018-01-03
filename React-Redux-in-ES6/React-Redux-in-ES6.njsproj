@@ -52,6 +52,7 @@
     <Compile Include="src\reducers\ajaxStatusReducer.js" />
     <Compile Include="src\reducers\authorReducer.js" />
     <Compile Include="src\reducers\courseReducer.js" />
+    <Compile Include="src\reducers\courseReducer.test.js" />
     <Compile Include="src\reducers\index.js" />
     <Compile Include="src\reducers\initialState.js" />
     <Compile Include="src\routes.js" />
