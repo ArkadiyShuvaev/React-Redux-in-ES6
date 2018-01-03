@@ -18,11 +18,13 @@ Webpack(WebpackConfig).run((err, stats) => {
 
     const jsonStats = stats.toJson();
 
-    if (jsonStats.hasErrors) {
+    //console.log(jsonStats);
+
+    if (jsonStats.errors) {
         return jsonStats.errors.map(error => console.log(error.red));
     }
 
-    if (jsonStats.hasWarnings) {
+    if (jsonStats.warnings) {
         console.log("Webpack generated the following warnings: ".bold.yellow);
         jsonStats.warnings.map(warning => console.log(warning.yellow));
     }
