@@ -43,7 +43,7 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
     return {
         createCourse: course => {
-            dispatch(CourseActions.createCourse(course));
+            dispatch(CourseActions.createCourseSuccess(course));
         }
     };
 }

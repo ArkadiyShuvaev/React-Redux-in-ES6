@@ -2,15 +2,11 @@ import * as CreateActions from "./actionTypes";
 import CourseApi from "../api/mockCourseApi";
 import * as AjaxStatusActions from "./ajaxStatusActions";
 
-export function createCourse(course) {
-    return { type: CreateActions.CREATE_COURSE, course }; // course: course
-}
-
 function loadCoursesSuccess(courses) {
     return { type: CreateActions.LOAD_COURSES_SUCCESS, courses };
 }
 
-function createCourseSuccess(course) {
+export function createCourseSuccess(course) {
     return { type: CreateActions.CREATE_COURSE_SUCCESS, course };
 }
 

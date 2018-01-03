@@ -58,6 +58,7 @@
     <Compile Include="src\reducers\initialState.js" />
     <Compile Include="src\routes.js" />
     <Compile Include="src\store\configureStore.js" />
+    <Compile Include="src\store\store.test.js" />
     <Compile Include="tools\srcServer.js" />
     <Compile Include="tools\startMessage.js" />
     <Compile Include="tools\testSetup.js" />
