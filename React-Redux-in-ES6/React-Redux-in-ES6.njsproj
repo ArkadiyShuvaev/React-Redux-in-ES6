@@ -72,6 +72,7 @@
     <Content Include=".babelrc" />
     <Content Include=".editorconfig" />
     <Content Include=".eslintrc" />
+    <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="src\components\course\CourseForm.jsx" />
